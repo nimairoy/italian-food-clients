@@ -13,7 +13,7 @@ const Footer = () => {
                 </div>
                 <div style={{height: '1px'}} className='w-full mt-4 bg-slate-600'></div>
                 <p className='font-light text-slate-400 mt-4 text-sm'>Insanely Good Recipes is a participant in the Italian Food Services LLC associates program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Italian Food.com We also participate in affiliate programs with Thrive Market, Shareasale, and other sites. We are compensated for referring traffic.</p>
-                <p className='font-light text-slate-400 mt-4 text-sm'>Copyright © 2023 All Right Reserved By Italian Food Organization</p>
+                <p className='font-light text-slate-400 mt-4 text-sm'>Copyright © 2023 All Right Reserved By Italian Food Recipes</p>
             </div>
         </div>
     );
