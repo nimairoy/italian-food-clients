@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 
+
 .my-container{
     max-width: 1150px;
     margin: 0 auto;
+}
+.wrapper{
+    background-color: rgba(0, 0, 0, 0.6);
 }
