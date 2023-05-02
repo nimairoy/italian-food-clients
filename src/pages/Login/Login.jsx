@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -24,7 +24,7 @@ const Login = () => {
                 <p className='text-center'>Don't have an account ? <Link to='/register' className='text-primary font-semibold underline'>Create an account</Link></p>
                 <div className="flex flex-col w-full border-opacity-50">
                     <div className="divider">OR</div>
-                    <li className='list-none cursor-pointer flex items-center border border-indigo-300 rounded-3xl p-3 justify-center my-2'><FaFacebook className='text-primary text-2xl mr-4'></FaFacebook> Continue with Facebook</li>
+                    <li className='list-none cursor-pointer flex items-center border border-indigo-300 rounded-3xl p-3 justify-center my-2'><FaGithub className='text-primary text-2xl mr-4'></FaGithub> Continue with Github</li>
                     <li className='list-none cursor-pointer flex items-center border border-indigo-300 rounded-3xl p-3 justify-center my-2'><FaGoogle className='text-warning text-2xl mr-4'></FaGoogle> Continue with Google</li>
                 </div>
             </div>
