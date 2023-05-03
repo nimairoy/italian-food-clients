@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineHeart } from 'react-icons/ai'
 
-const RecipesCard = ({rcp}) => {
+const RecipesCard = ({ rcp }) => {
 
-    const {recipe_id, recipe_image, name, ingredients, rating, cooking_method} = rcp;
-    console.log(rcp)
+    const { recipe_id, recipe_image, name, ingredients, rating, cooking_method } = rcp;
 
     return (
         <div className="card w-full bg-base-100 drop-shadow-2xl mb-8">
@@ -13,9 +13,12 @@ const RecipesCard = ({rcp}) => {
             </figure>
             <div className="card-body">
                 <h2 className="text-2xl font-semibold text-center">{name}</h2>
-                <p> <strong>Cooking Method:</strong><small> {cooking_method.length < 100 ? <> {cooking_method}</>: <>{cooking_method.slice(0, 100)}.....</> }</small> </p>
-                <p> <strong>Ingredients:</strong> <small>{ingredients.map((ind, index) => <li key={index}>{ind}</li>)} </small> </p>                
-                <p> <strong>Rating: </strong><small> {rating} </small> </p>                
+                <p> <strong>Cooking Method:</strong><small> {cooking_method.length < 100 ? <> {cooking_method}</> : <>{cooking_method.slice(0, 100)}.....</>}</small> </p>
+                <p> <strong>Ingredients:</strong> <small>{ingredients.map((ind, index) => <li key={index}>{ind}</li>)} </small> </p>
+                <p className='flex justify-between mb-4'>
+                    <span><strong>Rating: </strong><small> {rating} </small></span>
+                    <span> <AiOutlineHeart className='text-2xl cursor-pointer'></AiOutlineHeart> </span>
+                </p>
                 <div className="card-actions mx-auto">
                     <Link className="btn btn-primary">View Details</Link>
                 </div>

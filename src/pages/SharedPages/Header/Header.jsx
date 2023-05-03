@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = () => {
 
-    const user = ''
+    const { user } = useContext(AuthContext)
+    console.log(user)
 
     return (
         <div className=" py-1 bg-base-100 drop-shadow-xl">
@@ -16,13 +18,15 @@ const Header = () => {
                         <Link to='/' className='ml-8'>Home</Link>
                         <Link to='/blog' className='mx-8'>Blog</Link>
                         {
-                            user && <Link className="w-10 mr-4 rounded-full ">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            user && <Link className="w-10 mr-4 rounded-full">
+                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />                                
                             </Link>
                         }
+                        <span className='mr-4'>{user?.displayName}</span>
                         {
-                            user ? <button className='btn btn-outline' >Log Out</button> : <><Link to='/login' className="btn btn-outline">login</Link></>
+                            user ? <button >Log Out</button> : <><Link to='/login'>Login</Link></>
                         }
+                        <Link to='/register' className='mx-8'>Sign up</Link>
                     </ul>
                 </div>
             </div>
