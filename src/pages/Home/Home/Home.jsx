@@ -15,7 +15,7 @@ const Home = () => {
                 <h2 className="text-4xl font-bold mb-12 text-center">Top Most Chefs</h2>
                 <div className='grid grid-cols-3 gap-4'>
                     {
-                        chefs.map(chef => <ChefsCard
+                        chefs.slice(0, 6).map(chef => <ChefsCard
                             key={chef.id}
                             chef={chef}
                         ></ChefsCard>)
