@@ -6,7 +6,7 @@ import RecipesCard from '../Recipes/RecipesCard/RecipesCard';
 const ChefDetails = () => {
     const [recipes, setRecipes] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:8000/recipes/')
+        fetch('https://italian-food-server-site-nimairoy.vercel.app/recipes/')
             .then(res => res.json())
             .then(data => setRecipes(data))
     }, [])

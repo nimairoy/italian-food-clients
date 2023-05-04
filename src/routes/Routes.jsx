@@ -16,7 +16,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:8000/chefs')
+                loader: () => fetch('https://italian-food-server-site-nimairoy.vercel.app/chefs')
             },
             {
                 path: '/login',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path: '/chefs/:id',
                 element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:8000/chefs/${params.id}`)
+                loader: ({params}) => fetch(`https://italian-food-server-site-nimairoy.vercel.app/chefs/${params.id}`)
             },
             {
                 path: '/blog',

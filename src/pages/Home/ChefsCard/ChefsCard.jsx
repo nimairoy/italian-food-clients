@@ -10,7 +10,7 @@ const ChefsCard = ({ chef }) => {
     // console.log(id)
 
     return (
-        <div className="card w-full bg-base-100 drop-shadow-2xl">
+        <div className="card w-full mt-6 md:mt-0 bg-base-100 drop-shadow-2xl">
             <figure className="px-10 pt-10">
                 <img src={chef_picture} alt="Chef" className="rounded-xl" />
             </figure>

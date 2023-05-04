@@ -15,7 +15,7 @@ const Home = () => {
             <Banner></Banner>
             <div className='py-20 my-container'>
                 <h2 className="text-4xl font-bold mb-12 text-center">Top Most Chefs</h2>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='md:grid md:grid-cols-3 p-2 md:p-0 md:gap-4'>
                     {
                         chefs.slice(0, 6).map(chef => <ChefsCard
                             key={chef.id}

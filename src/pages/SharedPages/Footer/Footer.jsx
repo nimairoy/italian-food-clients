@@ -3,7 +3,7 @@ import { FaBeer, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='bg-slate-800 text-slate-400 py-6'>
+        <div className='bg-slate-800 p-2 text-slate-400 py-6'>
             <div className='my-container text-center'>
                 <h2 className='text-2xl font-medium'>Follow Us On</h2>
                 <div className="flex justify-center gap-4 mt-4">
