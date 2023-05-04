@@ -26,7 +26,7 @@ const Header = () => {
                     <Link to='/' className="text-2xl md:text-3xl font-bold uppercase p-2 text-primary grow">Italian Food</Link>
                 </div>
 
-                {/* // mobile menu icons  */}
+                {/* // mobile menu icons responsive */}
                 <div onClick={() => setOpen(!open)} className='visible  ml-auto md:hidden'>
                     <span>
                         {open === true ?
