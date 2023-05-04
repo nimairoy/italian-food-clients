@@ -2,6 +2,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import ChefsCard from '../ChefsCard/ChefsCard';
+import Banner2 from '../Banner/Banner2';
+import ExploreCard from '../../ExploreCard/ExploreCard';
 
 const Home = () => {
 
@@ -22,6 +24,8 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <Banner2></Banner2>
+            <ExploreCard></ExploreCard>
         </>
     );
 };

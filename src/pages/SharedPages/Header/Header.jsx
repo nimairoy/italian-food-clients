@@ -24,8 +24,8 @@ const Header = () => {
                 </div>
                 <div className="navbar-center ml-auto hidden lg:flex">
                     <ul className="menu menu-horizontal flex gap-4 items-center font-semibold px-1">
-                        <ActiveLink to='/' className='ml-8'>Home</ActiveLink>
-                        <ActiveLink to='/blog' className='mx-8'>Blog</ActiveLink>
+                        <ActiveLink to='/' >Home</ActiveLink>
+                        <ActiveLink to='/blog' >Blog</ActiveLink>
                         {
                             user && <Link className="w-10 mr-4 rounded-full">
                                 <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />                                
@@ -35,7 +35,7 @@ const Header = () => {
                         {
                             user ? <button onClick={handleLogOut}>Log Out</button> : <><ActiveLink to='/login'>Login</ActiveLink></>
                         }
-                        <ActiveLink to='/register' className='mx-8'>Sign up</ActiveLink>
+                        <ActiveLink to='/register'>Sign up</ActiveLink>
                     </ul>
                 </div>
             </div>
