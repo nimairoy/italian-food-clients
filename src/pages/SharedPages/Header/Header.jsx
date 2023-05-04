@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { FaBars } from 'react-icons/fa';
+import { IoMdClose } from 'react-icons/io'
 
 const Header = () => {
+    const [open, setOpen] = useState(false);
 
     const { user, logOut } = useContext(AuthContext)
     // console.log(user)
@@ -25,13 +27,19 @@ const Header = () => {
                 </div>
 
                 {/* // mobile menu icons  */}
-                <span className='visible  ml-auto md:hidden'>
-                    <FaBars className='text-2xl cursor-pointer'></FaBars>
-                </span>
+                <div onClick={() => setOpen(!open)} className='visible  ml-auto md:hidden'>
+                    <span>
+                        {open === true ?
+                            <IoMdClose className='text-2xl cursor-pointer'></IoMdClose> :
+                            <FaBars className='text-2xl cursor-pointer'></FaBars>
+                        }
+                    </span>
 
-                <div className="navbar-center ml-auto hidden lg:flex">
+                </div>
 
-                    <ul className="menu menu-horizontal flex gap-4 items-center font-semibold px-1">
+                <div className="navbar-center md:ml-auto lg:flex">
+
+                    <ul className={`menu md:menu-horizontal absolute z-50 top-20 bg-lime-200 left-6 md:bg-transparent px-8 py-6 md:px-2 rounded-md md:rounded-none md:py-0 md:static md:flex gap-4 items-center duration-500 font-semibold ${open ? 'left-4' : '-left-96' }`}>
                         <ActiveLink to='/' >Home</ActiveLink>
                         <ActiveLink to='/blog' >Blog</ActiveLink>
                         {

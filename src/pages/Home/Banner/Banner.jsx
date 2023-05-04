@@ -4,7 +4,7 @@ import background from '../../../assets/background.jpg';
 
 const Banner = () => {
     return (
-        <div style={{ background: `url('${background}')`, backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom', backgroundSize: 'cover', backgroundAttachment: 'fixed', position: 'relative' }}>
+        <div style={{ background: `url('${background}')`, backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
             <div className='wrapper p-4 md:p-2'>
                 <div className='my-container flex flex-col-reverse md:flex-row md:justify-between py-24 items-center'>
                     <div className='text-white'>
