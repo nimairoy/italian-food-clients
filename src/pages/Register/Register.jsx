@@ -59,7 +59,7 @@ const Register = () => {
                             </label>
                         </div>
                         <button type='submit' disabled={!check} className='btn btn-primary w-full rounded-none mt-4'>Sign Up</button>
-                        <p className='text-danger mt-2'>{error}</p>
+                        <p className='text-red-600 mt-2'>{error}</p>
                     </form>
                     <p className='text-center'>Already have an account ? <Link to='/login' className='text-primary font-semibold underline'>Login</Link></p>
                     <div className="flex flex-col w-full border-opacity-50">
