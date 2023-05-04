@@ -39,7 +39,7 @@ const Header = () => {
 
                 <div className="navbar-center md:ml-auto lg:flex">
 
-                    <ul className={`menu md:menu-horizontal absolute z-50 top-20 bg-lime-200 left-6 md:bg-transparent px-8 py-6 md:px-2 rounded-md md:rounded-none md:py-0 md:static md:flex gap-4 items-center duration-500 font-semibold ${open ? 'left-4' : '-left-96' }`}>
+                    <ul className={`menu md:menu-horizontal absolute z-50 top-20 bg-lime-200 md:bg-transparent px-8 py-6 md:px-2 rounded-md md:rounded-none md:py-0 md:static md:flex gap-4 items-center duration-500 font-semibold ${open ? 'left-4' : '-left-96' }`}>
                         <ActiveLink to='/' >Home</ActiveLink>
                         <ActiveLink to='/blog' >Blog</ActiveLink>
                         {
