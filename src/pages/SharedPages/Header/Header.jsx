@@ -1,11 +1,19 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     console.log(user)
+
+    //handle logout
+    const handleLogOut = () => {
+        logOut()
+        .then(result => toast('user logout successfully', {position: 'top-center'}))
+        .catch(error => console.log(error))
+    }
 
     return (
         <div className=" py-1 bg-base-100 drop-shadow-xl">
@@ -24,12 +32,13 @@ const Header = () => {
                         }
                         <span className='mr-4'>{user?.displayName}</span>
                         {
-                            user ? <button >Log Out</button> : <><Link to='/login'>Login</Link></>
+                            user ? <button onClick={handleLogOut}>Log Out</button> : <><Link to='/login'>Login</Link></>
                         }
                         <Link to='/register' className='mx-8'>Sign up</Link>
                     </ul>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
