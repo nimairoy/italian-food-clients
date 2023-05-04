@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
 
@@ -22,9 +23,9 @@ const Header = () => {
                     <Link to='/' className="text-3xl font-bold uppercase text-primary">Italian Food</Link>
                 </div>
                 <div className="navbar-center ml-auto hidden lg:flex">
-                    <ul className="menu menu-horizontal flex items-center font-semibold px-1">
-                        <Link to='/' className='ml-8'>Home</Link>
-                        <Link to='/blog' className='mx-8'>Blog</Link>
+                    <ul className="menu menu-horizontal flex gap-4 items-center font-semibold px-1">
+                        <ActiveLink to='/' className='ml-8'>Home</ActiveLink>
+                        <ActiveLink to='/blog' className='mx-8'>Blog</ActiveLink>
                         {
                             user && <Link className="w-10 mr-4 rounded-full">
                                 <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />                                
@@ -32,9 +33,9 @@ const Header = () => {
                         }
                         <span className='mr-4'>{user?.displayName}</span>
                         {
-                            user ? <button onClick={handleLogOut}>Log Out</button> : <><Link to='/login'>Login</Link></>
+                            user ? <button onClick={handleLogOut}>Log Out</button> : <><ActiveLink to='/login'>Login</ActiveLink></>
                         }
-                        <Link to='/register' className='mx-8'>Sign up</Link>
+                        <ActiveLink to='/register' className='mx-8'>Sign up</ActiveLink>
                     </ul>
                 </div>
             </div>
