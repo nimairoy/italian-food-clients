@@ -8,9 +8,9 @@ const Login = () => {
     const [error, setError] = useState('')
     const [check, setCheck] = useState(false);
 
-    const { logInUser } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const { logInUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
+    const navigate = useNavigate()
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
@@ -35,6 +35,37 @@ const Login = () => {
             setError(err.message)
         })
 
+    }
+
+    // handle sign in with google
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle()
+        .then(result => {
+            const signedUser = result.user;
+            console.log(signedUser);
+            setError('');
+            navigate(from, {replace: true});
+            toast('User Sign in Successfully', {position: 'top-center'});
+        })
+        .catch(err => {
+            setError(err.message);
+        })
+    }
+
+    
+    // handle sign in with github
+    const handleSignInWithGitHub = () => {
+        signInWithGithub()
+        .then(result => {
+            const signedUser = result.user;
+            console.log(signedUser);
+            setError('');
+            navigate(from, {replace: true});
+            toast('User Sign in Successfully', {position: 'top-center'});
+        })
+        .catch(err => {
+            setError(err.message);
+        })
     }
 
     // handle remember me 
@@ -65,8 +96,8 @@ const Login = () => {
                 <div className="flex flex-col w-full border-opacity-50">
                     <div className="divider">OR</div>
                     <ToastContainer />
-                    <li className='list-none cursor-pointer flex items-center border border-indigo-300 rounded-3xl p-3 justify-center my-2'><FaGithub className='text-primary text-2xl mr-4'></FaGithub> Continue with Github</li>
-                    <li className='list-none cursor-pointer flex items-center border border-indigo-300 rounded-3xl p-3 justify-center my-2'><FaGoogle className='text-warning text-2xl mr-4'></FaGoogle> Continue with Google</li>
+                    <li onClick={handleSignInWithGitHub} className='list-none cursor-pointer flex items-center border border-indigo-300 rounded-3xl p-3 justify-center my-2'><FaGithub className='text-primary text-2xl mr-4'></FaGithub> Continue with Github</li>
+                    <li onClick={handleSignInWithGoogle} className='list-none cursor-pointer flex items-center border border-indigo-300 rounded-3xl p-3 justify-center my-2'><FaGoogle className='text-warning text-2xl mr-4'></FaGoogle> Continue with Google</li>
                 </div>
             </div>
         </div>
